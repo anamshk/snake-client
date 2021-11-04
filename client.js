@@ -1,22 +1,17 @@
 const net = require("net");
+const { IP, PORT } = require("./const");
 
-const connect = function() {
+const connect = function(connec) {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: IP,
+    port: PORT
   });
+
   conn.setEncoding("utf8");
 
   conn.on("connect", () => {
     console.log("connected!");
-    conn.write("Name: snk");
-    // setInterval(() => {
-    //   conn.write("Move: up");
-    // }, 50);
-    // setTimeout(() => {
-    //   conn.write("Move: right");
-    // }, 50);
-    // conn.write('/exit');
+    conn.write('Name: ANM');
   });
 
   return conn;
